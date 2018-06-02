@@ -21,16 +21,20 @@ public class GuestBook implements ActionListener {
 	JButton buttonB = new JButton("View Names");
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
+	ArrayList<String> names = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 		GuestBook book = new GuestBook();
-		ArrayList<String> names = new ArrayList<String>();
 		
-
-
+		 book.createGUI();
+		 
+//		 names.add("Bob Banders");
+//		 names.add("Sandy Summers");
+//		 names.add("Greg Ganders"); 
+//		 names.add("Donny Doners"); 
 	}
 
-	void createGUI() {
+	 void createGUI() {
 		buttonA.addActionListener(this);
 		buttonB.addActionListener(this);
 		frame.setVisible(true);
@@ -39,18 +43,21 @@ public class GuestBook implements ActionListener {
 		panel.add(buttonB);
 		frame.setSize(500, 500);
 		panel.setVisible(true);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		String userInput;
 		if (e.getSource() == buttonA) {
-			String userInput = JOptionPane.showInputDialog("Enter A Name");
+		userInput = JOptionPane.showInputDialog("Enter A Name");
+		names.add(userInput);
 		}
 
 		if (e.getSource() == buttonB) {
 			
-			System.out.println();
+			System.out.println(names);
 			
 			// Guest #1: Bob Banders
 			// Guest #2: Sandy Summers
