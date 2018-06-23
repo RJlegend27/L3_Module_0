@@ -13,6 +13,7 @@ public class LogSearch implements ActionListener {
 	JButton button1 = new JButton("Create");
 	JButton button2 = new JButton("Search");
 	JButton button3 = new JButton("List");
+	JButton button4 = new JButton("Reset");
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 
@@ -25,13 +26,16 @@ public class LogSearch implements ActionListener {
 		panel.add(button1);
 		panel.add(button2);
 		panel.add(button3);
+		panel.add(button4);
 		panel.setVisible(true);
 		button1.setVisible(true);
 		button2.setVisible(true);
 		button3.setVisible(true);
+		button4.setVisible(true);
 		button1.addActionListener(this);
 		button2.addActionListener(this);
 		button3.addActionListener(this);
+		button4.addActionListener(this);
 
 	}
 
@@ -69,6 +73,7 @@ public class LogSearch implements ActionListener {
 		String userInput;
 		String userName;
 		String userEntry;
+		
 		if (e.getSource() == button1) {
 			userInput = JOptionPane.showInputDialog(null, "Enter a ID number");
 			userName = JOptionPane.showInputDialog(null, "Enter a name");
@@ -84,6 +89,8 @@ public class LogSearch implements ActionListener {
 			}
 		}if(e.getSource() == button3) {
 			System.out.println(log);
+		}if(e.getSource() == button4) {
+			log = new HashMap<Integer, String>();
 		}
 	}
 }
