@@ -19,7 +19,7 @@ public class IntroToArrayLists {
 		for(int i = 0 ; i < array.size() ; i++){
 			System.out.println(array.get(i));
 		}
-		//4. Print all the Strings using a for-each loop
+		//4. Print all the Strings using a for-each |oop
 		for(String e:array){
 			System.out.println(e);
 		}
